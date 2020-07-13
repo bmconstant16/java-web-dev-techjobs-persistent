@@ -11,15 +11,17 @@ public class Job extends AbstractEntity{
 //
 //    private String name;
 
-    private String employer;
+    @ManyToOne
+    private Employer employer;
+
     private String skills;
 
     public Job() {
     }
 
-    public Job(String anEmployer, String someSkills) {
+    public Job(Employer employer, String someSkills) {
         super();
-        this.employer = anEmployer;
+        this.employer = employer;
         this.skills = someSkills;
     }
 
@@ -33,11 +35,20 @@ public class Job extends AbstractEntity{
 //        this.name = name;
 //    }
 
-    public String getEmployer() {
+//    public String getEmployer() {
+//        return employer;
+//    }
+//
+//    public void setEmployer(String employer) {
+//        this.employer = employer;
+//    }
+
+
+    public Employer getEmployer() {
         return employer;
     }
 
-    public void setEmployer(String employer) {
+    public void setEmployer(Employer employer) {
         this.employer = employer;
     }
 
