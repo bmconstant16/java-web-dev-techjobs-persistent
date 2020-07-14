@@ -66,8 +66,8 @@ public class HomeController {
         Employer employer = optEmployer.get();
         newJob.setEmployer(employer);
 
-        List<Skill> optSkills = (List<Skill>) skillRepository.findAllById(skills);
-        newJob.setSkill(optSkills);
+        List<Skill> skillsObjs = (List<Skill>) skillRepository.findAllById(skills);
+        newJob.setSkills(skillsObjs);
 //        Iterable<Skill> optSkills = skillRepository.findAllById(skills);
 //        Skill skill = (Skill) optSkills.iterator();
 //        newJob.setSkill(skill);

@@ -52,6 +52,7 @@ public class JobData extends AbstractEntity{
         } else if (fieldName.equals("employer")){
             theValue = job.getEmployer().toString();
         } else {
+//            theValue = job.getSkills().toString();
             theValue = job.getSkills().toString();
         }
 
