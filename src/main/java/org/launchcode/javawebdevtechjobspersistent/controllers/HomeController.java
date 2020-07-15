@@ -53,9 +53,6 @@ public class HomeController {
     public String processAddJobForm(@ModelAttribute @Valid Job newJob,
                                        Errors errors, Model model, @RequestParam int employerId,
                                     @RequestParam List<Integer> skills) {
-//        public String processAddJobForm(@ModelAttribute @Valid Job newJob,
-//                Errors errors, Model model, @RequestParam int employerId,
-//        @RequestParam List<Integer> skills) {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Job");
