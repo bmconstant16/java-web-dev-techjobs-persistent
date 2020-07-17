@@ -13,6 +13,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,7 +53,10 @@ public class HomeController {
     @PostMapping("add")
     public String processAddJobForm(@ModelAttribute @Valid Job newJob,
                                        Errors errors, Model model, @RequestParam int employerId,
-                                    @RequestParam List<Integer> skills) {
+                                    @RequestParam (required=false) List<Integer> skills) {
+        if (skills == null) {
+            return "redirect:/add";
+        }
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Job");
